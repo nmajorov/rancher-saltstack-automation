@@ -11,8 +11,10 @@ include:
 k3s_setup1:
   cmd.run:
     - name: >
-        curl -sfL 'https://get.k3s.io' |
-        K3S_KUBECONFIG_MODE="644" sh -s - server --token {{ k3s_token }}
+        curl -sfL 'https://get.k3s.io' | 
+        INSTALL_K3S_VERSION="{{ k3s_version }}" 
+        K3S_KUBECONFIG_MODE="644" sh -s - server --token {{ k3s_token }} 
+
 
 k3s_setup2:
   cmd.run:
