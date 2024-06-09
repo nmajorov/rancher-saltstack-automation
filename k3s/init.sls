@@ -4,7 +4,7 @@ include:
 
 {% set k3s_token = salt['pillar.get']('k3s:token') %}
 
-{% set k3s_version = salt['pillar.get']('k3s:version') %}
+{% set k3s_version = 'v1.28.10+k3s1' %}
 
 {% do salt.log.info("k3s_token:" ~ k3s_token) %}
 
