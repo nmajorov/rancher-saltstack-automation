@@ -25,3 +25,7 @@ compile_commands.json
 *.pyc
 *.o
 *.so
+
+# saltstack top.sls
+
+top.sls
