@@ -1,6 +1,6 @@
 # SUSE Rancher automation with Saltstack
 
-SUSE Rancher, as a multi-cluster container management platform.
+[ SUSE Rancher](https://www.rancher.com/), as a multi-cluster container management platform.
 
 This is an example of saltstack automation for SUSE rancher on top of OpenSUSE Leap 15.5
 
