@@ -18,7 +18,7 @@ ensure_namespace_created:
 install_cert_crd:
   cmd.run:
     - name: |
-      kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/${CERT_MANAGER_VERSION}/cert-manager.crds.yaml
+        kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/${CERT_MANAGER_VERSION}/cert-manager.crds.yaml
     - env:
       - CERT_MANAGER_VERSION: "{{ cert_manager_version }}"
 
@@ -39,14 +39,15 @@ install_cert_manager_helm_chart:
 
 
 
-# install_rancher_stable:
-#   cmd.run:
-#     - name: |
-#         helm install rancher rancher-stable/rancher \
-#         --namespace={{ rancher_namespace }} \
-#         --set hostname={{ rancher_hostname }} \
-#         --set replicas={{ rancher_replicas }} \
-#         --version={{ rancher_version }}
-#     - env:
-#       - KUBECONFIG: '/etc/rancher/k3s/k3s.yaml'
+install_rancher_stable:
+  cmd.run:
+    - name: |
+        helm install rancher rancher-stable/rancher \
+        --namespace={{ rancher_namespace }} \
+        --set hostname={{ rancher_hostname }} \
+        --set replicas={{ rancher_replicas }} \
+        --version={{ rancher_version }}
+    - env:
+      - KUBECONFIG: '/etc/rancher/k3s/k3s.yaml'
 
+# -set bootstrapPassword=<PASSWORD_FOR_RANCHER_ADMIN>
