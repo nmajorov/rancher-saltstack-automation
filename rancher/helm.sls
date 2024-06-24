@@ -9,11 +9,6 @@ helm_cattle_repo_install:
     - present:
       - name: rancher-stable
         url: https://releases.rancher.com/server-charts/stable
-
-
-helm_cert_manager_repo_install:
-  helm.repo_managed:
-    - present:
       - name: jetstack
         url: https://charts.jetstack.io
 
