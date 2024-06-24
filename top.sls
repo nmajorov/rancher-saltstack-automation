@@ -1,7 +1,8 @@
 base:
     '*':
       - default-pkgs
-    
+      - python
+
     # 'os:SUSE':
     #   - match: grain
     #   - python
