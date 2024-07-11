@@ -1,6 +1,8 @@
 ---
+{% if grains['os_family'] == 'Suse' %} 
 include:
   - k3s.firewalld
+{% endif %}
 
 {% set k3s_token = salt['pillar.get']('k3s:token') %}
 

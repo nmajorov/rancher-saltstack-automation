@@ -1,7 +1,7 @@
 # install rancher stable release
 {% set rancher_namespace = 'cattle-system' %}
 {% set rancher_replicas = 1 %}
-{% set rancher_hostname = salt['pillar.get']('k3s:host') %}
+{% set rancher_hostname = salt['pillar.get']('rancher:host') %}
 {% set rancher_version = '2.8.4' %}
 
 
