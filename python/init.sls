@@ -11,7 +11,7 @@ configure_python:
     cmd.run:
      {% if grains['os_family'] == 'Debian' %} 
         - name:  update-alternatives --install /usr/bin/python python  /usr/bin/python3 1
-     {% else%}
+     {% else %}
         - name: alternatives --install  /usr/bin/python python /usr/bin/python3 1
      {% endif %}
 install_extras_modules:
