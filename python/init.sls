@@ -13,7 +13,7 @@ configure_python:
         - name:  update-alternatives --install /usr/bin/python python  /usr/bin/python3 1
      {% else%}
         - name: alternatives --install  /usr/bin/python python /usr/bin/python3 1
-     {% endif%}
+     {% endif %}
 install_extras_modules:
     pip.installed:
         - name: kubernetes
