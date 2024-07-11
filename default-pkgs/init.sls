@@ -5,5 +5,7 @@ default-pkgs:
         - pkgs:
             - tmux
             - python3
+           {% if grains['os_family'] != 'Debian' %} 
             - update-alternatives
+           {% endif %}
             - vim
