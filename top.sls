@@ -1,6 +1,6 @@
 base:
     '*':
-      - default-pkgs
+      - default
       - python
 
     # 'os:SUSE':
