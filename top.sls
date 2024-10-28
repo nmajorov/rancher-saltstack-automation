@@ -1,8 +1,7 @@
 base:
     '*':
       - default
-      - python
-
+      
     # 'os:SUSE':
     #   - match: grain
     #   - python

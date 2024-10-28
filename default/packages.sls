@@ -4,24 +4,30 @@ default-pkgs:
     pkg.installed:
         - pkgs:
             - tmux
-            - python3
             - firewalld
             - chrony
-           {% if grains['os_family'] == 'Suse'  %}
+           {% if grains['os_family'] == 'Suse' %}
             - update-alternatives
             - vim
             - git-core
             - bash-completion
-           {% endif %}
+            {% if 'Tumbleweed' in   grains['oscodename'] %}
+            - python311
+            {% else %}     
+                 - python3
+            {% endif %}     
+            {% endif %}
            {% if grains['os_family'] == 'RedHat'  %}
             - bash-completion
             - alternatives
             - git-all
             - vim-common
+            - python3
            {% endif %}
            {% if grains['os_family'] == 'Debian'  %}
             - git-all
             - vim
             - vim-common
+            - python3
            {% endif %}
 
