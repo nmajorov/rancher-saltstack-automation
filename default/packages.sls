@@ -14,7 +14,8 @@ default-pkgs:
             {% if 'Tumbleweed' in   grains['oscodename'] %}
             - python311
             {% else %}     
-                 - python3
+            # for opensuse leap install just python3
+            - python3
             {% endif %}     
             {% endif %}
            {% if grains['os_family'] == 'RedHat'  %}
