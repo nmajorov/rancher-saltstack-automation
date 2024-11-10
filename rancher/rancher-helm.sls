@@ -19,8 +19,7 @@ install_rancher_stable:
 
   cmd.run:
 
-{% if salt['pillar.get']('rancher:update') %}
-
+{% if salt['pillar.get']('rancher:update') is True  %}
 
     - name: |
         helm upgrade rancher rancher-stable/rancher \
