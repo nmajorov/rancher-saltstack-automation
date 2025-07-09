@@ -5,6 +5,7 @@
 {% set rancher_version =  salt['pillar.get']('rancher:version') %}
 
 
+
 ensure_namespace_created:
     # kubernetes.namespace_present:
     # - name: "{{ rancher_namespace }}"
@@ -18,16 +19,6 @@ ensure_namespace_created:
 install_rancher_stable:
 
   cmd.run:
-
-{% if salt['pillar.get']('rancher:update') is True  %}
-
-    - name: |
-        helm upgrade rancher rancher-stable/rancher \
-        --namespace={{ rancher_namespace }} \
-        --set hostname={{ rancher_hostname }} \
-        --set replicas={{ rancher_replicas }} \
-        --version={{ rancher_version }}
-{% else %}
     - name: |
         helm install rancher rancher-stable/rancher \
         --namespace={{ rancher_namespace }} \
@@ -35,7 +26,6 @@ install_rancher_stable:
         --set replicas={{ rancher_replicas }} \
         --version={{ rancher_version }}
 
-{% endif %}
     - env:
       - KUBECONFIG: '/etc/rancher/k3s/k3s.yaml'
 # 

@@ -3,7 +3,7 @@
 include:
   - rancher.helm
   - rancher.cert-manager
-  - rancher.rancher-helm
+  - rancher.rancher-install
 {% else %}
 
 {% do  salt["log.info"]("no rancher version set") -%}
