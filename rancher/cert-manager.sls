@@ -6,12 +6,13 @@
 
 # By using || instead of | you won't get your script interrupted by the error
 
-
-create_cert_manager_namespace:
-  kubernetes.namespace_present:
-    - name: cert-manager
-    - env:
-      - KUBECONFIG: '/etc/rancher/k3s/k3s.yaml'
+## helm create-namespace do the job
+#create_cert_manager_namespace:
+#  cmd.run:
+#    - name: |
+#        kubectl create namespace cert-manager
+#    - env:
+#      - KUBECONFIG: '/etc/rancher/k3s/k3s.yaml'
 
 install_cert_crd:
   cmd.run:
