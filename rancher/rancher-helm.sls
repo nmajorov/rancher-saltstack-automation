@@ -2,7 +2,7 @@
 {% set rancher_namespace = 'cattle-system' %}
 {% set rancher_replicas = 1 %}
 {% set rancher_hostname = salt['pillar.get']('rancher:host') %}
-{% set rancher_version = '2.8.4' %}
+{% set rancher_version = '2.12.3' %}
 
 
 ensure_namespace_created:
